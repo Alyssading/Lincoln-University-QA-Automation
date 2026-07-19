@@ -1,0 +1,13 @@
+# Test Cases for Employment NZ Search Functionality
+
+| Case ID | Title / Scenario | Pre-conditions | Test Steps | Expected Result | Test Type |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-SRCH-001** | [Positive] Verify successful search execution with valid keywords. | User is on the Employment NZ homepage. | 1. Click on the search input box.<br>2. Type "Holiday Pay".<br>3. Press 'Enter' or click the search icon. | 1. URL redirects to `/search-results?Search=Holiday+Pay`.<br>2. Heading "Search results" is visible.<br>3. Relevant articles appear. | Functional / Positive |
+| **TC-SRCH-002** | [Boundary] Verify search box behavior with text exceeding 200+ characters. | User is on the Employment NZ homepage. | 1. Copy a 200+ character string.<br>2. Paste it into the search box.<br>3. Press 'Enter'. | System should handle the length gracefully (either truncate the text, restrict typing, or show a valid empty state without crashing). | Boundary Value |
+| **TC-SRCH-003** | [Negative/Security] Verify input sanitization against special characters/scripts. | User is on the Employment NZ homepage. | 1. Input `<script>alert('XSS')</script>` into the search box.<br>2. Press 'Enter'. | System must sanitize the input, render it as plain text, and display "No results found" instead of executing the script. | Security / Negative |# Test Cases for Employment NZ Search Functionality
+
+| Case ID | Title / Scenario | Pre-conditions | Test Steps | Expected Result | Test Type |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TC-SRCH-001** | [Positive] Verify successful search execution with valid keywords. | User is on the Employment NZ homepage. | 1. Click on the search input box.<br>2. Type "Holiday Pay".<br>3. Press 'Enter' or click the search icon. | 1. URL redirects to `/search-results?Search=Holiday+Pay`.<br>2. Heading "Search results" is visible.<br>3. Relevant articles appear. | Functional / Positive |
+| **TC-SRCH-002** | [Boundary] Verify search box behavior with text exceeding 200+ characters. | User is on the Employment NZ homepage. | 1. Copy a 200+ character string.<br>2. Paste it into the search box.<br>3. Press 'Enter'. | System should handle the length gracefully (either truncate the text, restrict typing, or show a valid empty state without crashing). | Boundary Value |
+| **TC-SRCH-003** | [Negative/Security] Verify input sanitization against special characters/scripts. | User is on the Employment NZ homepage. | 1. Input `<script>alert('XSS')</script>` into the search box.<br>2. Press 'Enter'. | System must sanitize the input, render it as plain text, and display "No results found" instead of executing the script. | Security / Negative |
